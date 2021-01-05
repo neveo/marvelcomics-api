@@ -5,7 +5,7 @@ import './styles.css';
 
 
 function App(){
-	const [characters, setCharacters] = useState(null);
+	const [characters, setCharacters] = useState([]);
 
 	const fetchData = async () => {
 		const response = await axios.get(
@@ -13,7 +13,7 @@ function App(){
 		);
 
 		setCharacters(response.data);
-		console.log();
+		console.log(setCharacters(response.data));
 	};
 
 	return(
