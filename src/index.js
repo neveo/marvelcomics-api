@@ -5,15 +5,21 @@ import './styles.css';
 
 
 function App(){
-	const [characters, setCharacters] = useState([]);
+	const [characters, setCharacters] = useState("");
+	const ts = '1608763962579';
+	const public_key = '3a80597230483a002fa9628a2c7774f3';
+	const uri = 'https://gateway.marvel.com/v1/public/characters?ts=';
+	const hash = 'ac71a74a1bdc232da7c76480396ca1c2';
+	const apiendpoint = uri + ts +'&apikey=' + public_key + '&hash=' + hash;
 
-	const fetchData = async () => {
-		const response = await axios.get(
-			'https://gateway.marvel.com/v1/public/characters?ts=1608763962579&apikey=3a80597230483a002fa9628a2c7774f3&hash=ac71a74a1bdc232da7c76480396ca1c2&limit=10'
+	const fetchData = () => {
+		axios.get(apiendpoint).then((response) => {
+
+			console.log(response.data.data.results);
+			setCharacters(response.data);
+
+			}
 		);
-
-		setCharacters(response.data);
-		console.log(setCharacters(response.data));
 	};
 
 	return(
@@ -29,20 +35,11 @@ function App(){
 		</div>
 
 		<div className="characters">
-			{characters && 
-				characters.map((character, index) => {
 
-				return(
-					<div className="character">
-						<h2>{character.name}</h2>
-
-						<div className="details">
-							<p> {character.description} </p>
-						</div>
-					</div>
-				);
-			})}
 		</div>
+
+
+
 	</div>
 	);
 }
