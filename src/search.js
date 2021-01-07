@@ -22,17 +22,19 @@ class Search extends Component {
 	};
 
 	makeApiCall = searchInput => {
-		const searchUri = apiendpoint +'?s={searchInput}';
+		const searchUri = apiendpoint +'&nameStartsWith=' +searchInput;
 		fetch(searchUri)
 			.then(response => {
 				return response.json();
 			})
 			.then(jsonData => {
-				this.setState({ characters: jsonData.characters});
+				this.setState({ characters: jsonData.data.results});
 			});
 	};
 
 	render() {
+
+console.log(this.setState);
 
 		return (
 
@@ -55,6 +57,8 @@ class Search extends Component {
 						<div className="single-character" key={index}>
 							<h2>{character.name}</h2>
 							<p>{character.description}</p>
+							<p><img className="photo" src={character.thumbnail.path+'.'+character.thumbnail.extension} alt="" /></p>
+							
 						</div>
 					))}
 					</div>
