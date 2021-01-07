@@ -34,18 +34,14 @@ class Search extends Component {
 
 	render() {
 
-console.log(this.setState);
-
 		return (
-
-
 		<div className="App">
 			<h1>Marvel Universe</ h1>
-			<h2>Fetch a list from Marvel characters from API</ h2>
+			<h2>Characters API from Marvel Universe</ h2>
 			<input 
 				name="text" 
 				type="text" 
-				placeholder="Type in a Marvel character you looking for..."
+				placeholder="Type a character: Hulk, Iron man, Captain America, Thor etc ..."
 				onChange={event => this.handleOnChange(event)}
 				value={this.state.searchValue}
 			/>
