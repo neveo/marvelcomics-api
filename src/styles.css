@@ -76,6 +76,11 @@ input {
   font-size: 18px;
 }
 
+.photo {
+  height: 200px;
+  width: 200px;
+}
+
 .details {
   text-align: left;
 }
