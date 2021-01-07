@@ -7,6 +7,15 @@ import './styles.css';
 	const hash = 'ac71a74a1bdc232da7c76480396ca1c2';
 	const apiendpoint = uri + ts +'&apikey=' + public_key + '&hash=' + hash;
 
+	const useStyles = makeStyles({
+	  root: {
+	    maxWidth: 345,
+	  },
+	  media: {
+	    height: 140,
+	  },
+	});	
+
 class Search extends Component {
 	state ={
 		searchValue: "",
@@ -47,20 +56,39 @@ class Search extends Component {
 			/>
 							
 				<button className="fetch-button" onClick={this.handleSearch}>Search</button>
-				{this.state.characters ? (
-					<div>
-					{this.state.characters.map((character, index) => (
-						<div className="single-character" key={index}>
-							<h2>{character.name}</h2>
-							<p>{character.description}</p>
-							<p><img className="photo" src={character.thumbnail.path+'.'+character.thumbnail.extension} alt="" /></p>
-							
-						</div>
+				
+
+			export default function MediaCard() {
+			  const classes = useStyles();
+
+			  return (
+			  {this.state.characters ? (
+			  	{this.state.characters.map((character, index) => (
+						<Card className={classes.root} key={index}>
+						  <CardActionArea>
+						    <CardMedia
+						      className={classes.media}
+						      image="{character.thumbnail.path+'.'+character.thumbnail.extension}"
+						      title="Marvel Characters"
+						    />
+						    <CardContent>
+						      <Typography gutterBottom variant="h5" component="h2">
+						        {character.name}
+						      </Typography>
+						      <Typography variant="body2" color="textSecondary" component="p">
+						        {character.description}
+						      </Typography>
+						    </CardContent>
+						  </CardActionArea>
+						</Card>
 					))}
-					</div>
-				) : (
+				: (
 					<p>Look up a character</p>				
 				)}
+			  );
+			}
+
+
 		</div>
 		);
 	}
