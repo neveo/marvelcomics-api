@@ -62,7 +62,7 @@ class Search extends Component {
 				onChange={event => this.handleOnChange(event)}
 				value={this.state.searchValue}/>
 							
-				<button className="fetch-button" onClick={this.handleSearch}>Search</button>
+				<button type="submit" className="fetch-button" onClick={this.handleSearch}>Search</button>
 
 			  {this.state.characters ? (
 			  	this.state.characters.map((character, index) => (
