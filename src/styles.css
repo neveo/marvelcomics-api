@@ -294,7 +294,7 @@ Form
   margin-bottom: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
-  color: var(--primaryColor);
+  color: var(--primaryDarkColor);
 }
 .form-control input {
   width: 100%;
