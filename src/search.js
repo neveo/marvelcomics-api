@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styles.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -51,11 +50,14 @@ class Search extends Component {
 
 	render() {
 		return (
-		<div className="App">
-			<h1>Marvel Universe</ h1>
-			<h2>Characters API from Marvel Universe</ h2>
+		<>	
+		<div className="container">
+			<div className="title">
+				<h1 class="header-main-title">Characters of Marvel Universe</h1>
+				<div className="underline"></div>
+			</div>
+
 			<input 
-				required
 				name="text" 
 				type="text" 
 				placeholder="Type a character: Hulk, Iron man, Captain America, Thor etc ..."
@@ -64,8 +66,7 @@ class Search extends Component {
 							
 				<button type="submit" className="fetch-button" onClick={this.handleSearch}>Search</button>
 
-			  {this.state.characters ? (
-			  	this.state.characters.map((character, index) => (
+			  	{this.state.characters.map((character, index) => (
 						<Card className={useStyles.root} key={index} style={{width: 400}}>
 						  <CardActionArea>
 						    <CardMedia
@@ -83,11 +84,10 @@ class Search extends Component {
 						    </CardContent>
 						  </CardActionArea>
 						</Card>
-					)))
-				: (
-					<p>Look up a character</p>				
-				)}
+					))
+				}
 		</div>
+		</>
 		);
 	}
 }
