@@ -165,7 +165,7 @@ Navbar
   transition: var(--mainTransition);
 }
 .nav-links a:hover {
-  color: var(--primaryColor);
+  color: var(--primaryDarkColor);
 }
 .logo {
   width: 12rem;
@@ -200,7 +200,7 @@ Error
 }
 /* 
 ====== 
-Cocktails List 
+Characters List 
 ======
 */
 
@@ -215,7 +215,7 @@ Cocktails List
   margin-bottom: 3.5rem;
   margin-top: 1rem;
 }
-.cocktails-center {
+.characters-center {
   width: var(--smallWidth);
   margin: 0 auto;
   max-width: var(--fullWidth);
@@ -225,17 +225,17 @@ Cocktails List
   /* align-items: start; */
 }
 @media screen and (min-width: 576px) {
-  .cocktails-center {
+  .characters-center {
     grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
   }
 }
 /* 
 ====== 
-Cocktail 
+Character 
 ======
 */
 
-.cocktail {
+.character {
   background: var(--mainWhite);
   margin-bottom: 2rem;
   box-shadow: var(--lightShadow);
@@ -244,27 +244,27 @@ Cocktail
   grid-template-rows: auto 1fr;
   border-radius: var(--mainBorderRadius);
 }
-.cocktail:hover {
+.character:hover {
   box-shadow: var(--darkShadow);
 }
-.cocktail img {
+.character img {
   height: 20rem;
   object-fit: cover;
   border-top-left-radius: var(--mainBorderRadius);
   border-top-right-radius: var(--mainBorderRadius);
 }
-.cocktail-footer {
+.character-footer {
   padding: 1.5rem;
 }
-.cocktail-footer h3,
-.cocktail-footer h4,
-.cocktail-footer p {
+.character-footer h3,
+.character-footer h4,
+.character-footer p {
   margin-bottom: 0.3rem;
 }
-.cocktail-footer h3 {
+.character-footer h3 {
   font-size: 2rem;
 }
-.cocktail-footer p {
+.character-footer p {
   color: var(--darkGrey);
   margin-bottom: 0.5rem;
 }
@@ -307,11 +307,11 @@ Form
 }
 /* 
 ====== 
-Cocktail
+Character
 ======
 */
 
-.cocktail-section {
+.character-section {
   text-align: center;
 }
 .drink {
