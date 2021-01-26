@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../components/Loading';
 import { useParams, Link } from 'react-router-dom';
-const characterUrl = '';
+//const characterUrl = 'https://gateway.marvel.com/v1/public/characters/' + `${id}` +'?ts=';
 
 const SingleCharacter = () => {
     return (

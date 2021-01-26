@@ -9,16 +9,14 @@ const hash = `${REACT_APP_HASH}`;
 const marvelUrl = 'https://gateway.marvel.com/v1/public/characters?ts=';
 const apiendpoint = marvelUrl + ts +'&apikey=' + public_key + '&hash=' + hash;
 
-const AppContent = React.createContext();
+const AppContext = React.createContext();
 
-const AppProvider = ({ childern }) => {
-    return (
-        <AppContext.Provider value='testing'>{ childern }</AppContext.Provider>
-    );
+const AppProvider = ({ children }) => {
+  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
 }
-
+// make sure use
 export const useGlobalContext = () => {
-    return useContext(AppContext);
+  return useContext(AppContext)
 }
 
 export { AppContext, AppProvider }
