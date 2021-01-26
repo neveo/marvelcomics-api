@@ -13,8 +13,39 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [ loading, setLoading ] = useState(true);
-  const [ searchTerm, setSearchTerm ] = useState('a');
+  const [ searchTerm, setSearchTerm ] = useState('t');
   const [ characters, setCharacters ] = useState([]);
+
+  const fetchMarvelCharacters = async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${apiendpoint}`+`&nameStartsWith=`+`${searchTerm}`)
+      const data = await response.json();
+      const {results} = data.data;
+
+      if(results){
+        const newCharacters = results.map((item) => {
+          const {id,name,description,thumbnail} = item;
+          return {id,name,description,thumbnail }
+        })
+        setCharacters(newCharacters);
+
+      }else{
+        setCharacters([])
+      }
+      setLoading(false);
+
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      
+    }
+  }
+
+  useEffect(() => {
+    fetchMarvelCharacters()
+  }, [searchTerm]);
 
   return (
     <AppContext.Provider 
