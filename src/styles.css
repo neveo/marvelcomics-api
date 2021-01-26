@@ -4,8 +4,10 @@ Variables
 ======
 */
 :root {
-  --primaryLightColor: #d4e6a5;
+  --primaryLightColorGr: #d4e6a5;
+  --primaryLightColor: #d89785;
   --primaryColor: #476a2e;
+  --primaryColorYw: #e8d019;
   --primaryDarkColor: #c02c03;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
@@ -79,8 +81,8 @@ Buttons
 .btn-primary {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
+  color: var(--mainRed);
+  border: 2px solid var(--mainRed);
   padding: 0.45rem 0.8rem;
   display: inline-block;
   transition: var(--mainTransition);
@@ -91,7 +93,7 @@ Buttons
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primaryColor);
+  background: var(--mainRed);
   color: var(--mainWhite);
 }
 .btn-white {
@@ -101,16 +103,16 @@ Buttons
 }
 .btn-white:hover {
   background: var(--mainWhite);
-  color: var(--primaryColor);
+  color: var(--mainRed);
 }
 .btn-primary {
-  background: var(--primaryColor);
+  background: var(--mainRed);
   color: var(--mainWhite);
   border-color: transparent;
 }
 .btn-primary:hover {
   background: var(--primaryLightColor);
-  color: var(--primaryColor);
+  color: var(--mainWhite);
 }
 .btn-block {
   width: 100%;

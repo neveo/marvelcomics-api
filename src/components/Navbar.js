@@ -1,12 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../marvellogo.svg';
+import logo from '../marvel.svg';
+import SearchForm from './SearchForm';
 
 const Navbar = () => {
     return (
-        <div>
-            <h2>navbar component</h2>
-        </div>
+        <nav className="navbar">
+            <div className="nav-center">
+                <Link to="/marvelcomics-api">
+                    <img src={logo} alt="Marvel Logo" className="logo"></img>
+                </Link>
+                <ul className="nav-links">
+                    <li>
+                        <Link to="/marvelcomics-api">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/marvelcomics-api/about">
+                            About
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 }
 

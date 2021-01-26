@@ -18,13 +18,13 @@ function App(){
                 <Route exact path="/marvelcomics-api">
                     <Home />
                 </Route>
-                <Route exact path="/marvelcomics-ap/about">
+                <Route exact path="/marvelcomics-api/about">
                     <About />
                 </Route>
                 <Route exact path="/marvelcomics-api/character/:id">
                     <SingleCharacter />
                 </Route>
-                <Route exact path="/marvelcomics-api*">
+                <Route exact path="/marvelcomics-api/*">
                     <Error />
                 </Route>
             </Switch>
