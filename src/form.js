@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const FormInput = () => {
     const [ firstName, setFirstName ] = useState('');
     const [ email, setEmail ] = useState('');
 
+    const history = useHistory();
+    
     const handleSumbit = (e) => {
         e.preventDefault();
-        this.props.history.push('/search');
-
-    }
-
+        const formData = { firstName, email };
+        history.push('/search');
+    };
     return (
         <>
         <div className="title">
@@ -22,22 +23,29 @@ const FormInput = () => {
                 <div className="form-control">
                     <label htmlFor="firstName">Name: </label>
                     <input type="text"
-                           id="firstName"
-                           required
+                        required
+                        id="firstName"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        
                     />
                 </div>
                 <div className="form-control">
                     <label htmlFor="email">Email: </label>
                     <input type="text"
-                           id="Email"
-                           required
+                        id="Email"
+                        value={email}
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                        
                     />
                 </div>
-                <button type="submit" >Enter</button>
+                <button type="submit">Enter</button>
             </form>
         </article>
         </>
     );
+    
 };
 
 export default FormInput;
