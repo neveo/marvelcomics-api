@@ -15,16 +15,16 @@ function App(){
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/marvelcomics-api">
                     <Home />
                 </Route>
-                <Route exact path="/about">
+                <Route exact path="/marvelcomics-ap/about">
                     <About />
                 </Route>
-                <Route exact path="/character/:id">
+                <Route exact path="/marvelcomics-api/character/:id">
                     <SingleCharacter />
                 </Route>
-                <Route exact path="*">
+                <Route exact path="/marvelcomics-api*">
                     <Error />
                 </Route>
             </Switch>
