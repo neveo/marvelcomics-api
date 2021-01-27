@@ -10,7 +10,7 @@ const Character = ({id,name,description,thumbnail}) => {
             </div>
             <div className="character-footer">
                 <h3>{name}</h3>
-                <h5>{description ? description : 'No description provided on this character.'}</h5>
+                <h5>{description ? description : 'No detailed description provided on this character.'}</h5>
                 <Link to={`/marvelcomics-api/character/${id}`} className="btn btn-primary">Details</Link>
             </div>
         </article>

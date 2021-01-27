@@ -165,7 +165,7 @@ Navbar
   transition: var(--mainTransition);
 }
 .nav-links a:hover {
-  color: var(--primaryDarkColor);
+  color: var(--primaryColor);
 }
 .logo {
   width: 12rem;
@@ -294,7 +294,7 @@ Form
   margin-bottom: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
-  color: var(--primaryDarkColor);
+  color: var(--primaryColor);
 }
 .form-control input {
   width: 100%;
@@ -335,7 +335,7 @@ Character
   background: var(--primaryLightColor);
   padding: 0.25rem 0.5rem;
   border-radius: var(--mainBorderRadius);
-  color: var(--primaryColor);
+  color: var(--offWhite);
 }
 .drink-info {
   padding-top: 2rem;
