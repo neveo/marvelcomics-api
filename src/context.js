@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
 
-//building endpoint with api keys
+//building endpoint with api keys xx
 const { REACT_APP_TS, REACT_APP_PUBLIC_KEY, REACT_APP_HASH } = process.env;
 const ts = `${REACT_APP_TS}`;
 const public_key = `${REACT_APP_PUBLIC_KEY}`;
@@ -13,24 +13,35 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [ loading, setLoading ] = useState(true);
-  const [ searchTerm, setSearchTerm ] = useState('t');
+  const [ searchTerm, setSearchTerm ] = useState('ca');
   const [ characters, setCharacters ] = useState([]);
 
-  const fetchMarvelCharacters = async () => {
+  const fetchMarvelCharacters = useCallback( async () => {
     setLoading(true);
-
+    
     try {
-      const response = await fetch(`${apiendpoint}`+`&nameStartsWith=`+`${searchTerm}`)
+      const response = await fetch(`${apiendpoint}&nameStartsWith=${searchTerm}`)
       const data = await response.json();
+      console.log(data);
       const {results} = data.data;
 
       if(results){
         const newCharacters = results.map((item) => {
-          const {id,name,description,thumbnail} = item;
-          return {id,name,description,thumbnail }
+          const {
+            id,
+            name,
+            description,
+            thumbnail,
+          } = item;
+
+          return {
+            id,
+            name,
+            description,
+            thumbnail,
+          }
         })
         setCharacters(newCharacters);
-
       }else{
         setCharacters([])
       }
@@ -38,14 +49,13 @@ const AppProvider = ({ children }) => {
 
     } catch (error) {
       console.log(error);
-      setLoading(false);
-      
+      setLoading(false);      
     }
-  }
+  },[searchTerm])
 
   useEffect(() => {
     fetchMarvelCharacters()
-  }, [searchTerm]);
+  }, [searchTerm,fetchMarvelCharacters]);
 
   return (
     <AppContext.Provider 

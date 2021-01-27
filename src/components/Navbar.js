@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../marvel.svg';
-import SearchForm from './SearchForm';
+//import SearchFrom from './SearchForm';
 
 const Navbar = () => {
     return (
